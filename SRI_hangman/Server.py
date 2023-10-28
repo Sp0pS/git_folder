@@ -13,8 +13,8 @@ def game():
     random_world = WORLDS.pop()
 
     guessed_world = "_" * len(random_world)
-
-    for i in range(4):
+    tries = 0
+    while tries < 4:
         #recived_world = client_connection.recv().decode()
         recived_world = input("world: "+ guessed_world + "   ->input a world or a letter: ")
 
@@ -34,9 +34,11 @@ def game():
                 print("game over: you won!!")
                 return 1
 
-            print("correct", 4-(i+1),"lives left\n")
+            print("correct\n")
         else:
-            print("wrong", 4-(i+1),"lives left\n")
+            tries+=1
+            print("wrong", 4-(tries),"lives left\n")
+
 
 
 
