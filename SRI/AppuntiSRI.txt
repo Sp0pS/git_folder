@@ -1,0 +1,71 @@
+LAB: PER CHIUDERE 
+usa interrupt per chiudere il programma 
+importa signal e sys 
+
+
+
+
+LIVELLO TCP/IP
+
+APP
+TRASPORTO
+INTERNET
+DATA LINK
+
+TEORIA:
+
+livello trasporto: protocolli tcp e udp 
+senza di loro non ci sarebbe nulla 
+
+2 funzioni: 
+	1) ciò che tiene su la rete(internet) --> controllo delle congestione = flusso, trasmition rate, lo fa TCP 
+	--> si cura della trasmissione sua e degli altri (evita i dos)
+	udp invece si intaserebbe sempre
+
+	2) comunicazione reliable fra processi
+	
+data link pensa al next hop
+	
+network si occupa del host/nodo di destinazione
+                           
+	
+	trasporto: (ip, porta) --> per servizi e processi 
+
+es. le poste inviano al condominio (=network), ma il trasporto che si occupa di prendere la busta e portarla sul processo corretto 
+= un indirizzamento all'interno della macchina
+
+udp = per generalità, controlla il minimo indispensabile = MENEFREGO		es   streaming è creata per essere tollerante agli errori
+tcp = per precisione								es   whatzapp, deve arrivare tutto, se manca qualcosa non vedi la foto
+										mail,
+
+
+Efficacia significa raggiungere gli obiettivi prefissati, 
+efficienza vuol dire utilizzare al meglio le risorse a disposizione
+
+estensioni sono inutili ( linux goat non guarda estensione ) 
+
+
+rtt = viaggio circolare (round trip time)
+
+quando buffer pieno, (out of bound per durso) svuota semplicemente, 
+packet loss indica se i buffer sono pieni  
+
+SERVIZI
+	a) comunicazione logica fra processi = mascheramento del fatto che dentro c'è tanta roba --> comunicazione trasocket a socket
+	b)livello applicativo consegna il messaggio
+	c)segmentazione per messaggi, ovvero se c'è un dato grosso lo suddivido, ed è la prima cosa che fa il livello trasporto è diversa da quella del datalink perchè dipende dalla banda che dipendedallo stato della rete per esempio netflix e lampadina 
+	d)Header per tutti i pacchetti per fare in modo che non si perdono nella rete 
+	e)passo al livello rete	
+
+
+CARATTERISTICHE IP , UDP , TCP
+
+
+IP-->non affidabile > se prova a mandare i pacchetti e questi non raggiungono la destinazione lui è stronzo perchè dice che ci ha provato e non è un suo problema --> BEST EFFORT
+
+UDP --> anche lui non è affidabile anche lui è Best Effort se qualcosa non va non è un suo problema e non ,mi dice niente, consegna ai processi
+
+TCP --> affidabile se non riesce a fare le cose me lo dice, controllo flusso, sequenze ack timer, contr. congestione(intasamento rete controllo non più sulla connessione ma sul mezzo), complesso
+
+
+
