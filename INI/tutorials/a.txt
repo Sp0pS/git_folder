@@ -1,0 +1,2 @@
+https://realpython.com/python-web-applications-with-flask-part-i/
+https://realpython.com/primer-on-jinja-templating/
